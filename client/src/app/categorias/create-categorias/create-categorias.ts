@@ -36,6 +36,7 @@ export class CreateCategorias {
           console.error(err);
         }
       });
+      
     }
   }
 
