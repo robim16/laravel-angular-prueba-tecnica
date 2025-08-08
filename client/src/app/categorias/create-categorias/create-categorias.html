@@ -1,0 +1,44 @@
+<div class="col-4 mt-5 mx-auto">
+  <div class="">
+    <h2 class="h4 my-2">Crear Categoría</h2>
+
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre de la Categoría</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre"
+          [class.is-invalid]="categoryForm.get('nombre')?.invalid && categoryForm.get('nombre')?.touched" />
+        <div *ngIf="categoryForm.get('nombre')?.errors?.['required']" class="invalid-feedback">
+          El nombre es obligatorio.
+        </div>
+        <div *ngIf="categoryForm.get('nombre')?.errors?.['minlength']" class="invalid-feedback">
+          Mínimo 3 caracteres.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="estado" class="form-label">Estado de la Categoría</label>
+        <select class="form-control" id="estado" formControlName="estado"
+          [class.is-invalid]="categoryForm.get('estado')?.invalid && categoryForm.get('estado')?.touched">
+          <option value="" disabled selected>Seleccione un estado</option>
+          <option value="activa">Activa</option>
+          <option value="inactiva">Inactiva</option>
+        </select>
+        <div *ngIf="categoryForm.get('estado')?.errors?.['required']" class="invalid-feedback">
+          El estado es obligatorio.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary my-3" [disabled]="categoryForm.invalid">
+        Crear
+      </button>
+    </form>
+
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+      {{ successMessage }}
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>
