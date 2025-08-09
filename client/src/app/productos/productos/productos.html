@@ -1,0 +1,24 @@
+<div class="container mt-4">
+    <h2>Listado de productos</h2>
+    <a class="btn btn-primary" routerLink="/productos/create">Crear producto</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(producto of productos; track producto.id) {
+                <tr>
+                    <td>{{ producto.id }}</td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.categoria_id }}</td>
+                    <td>{{ producto.estado }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

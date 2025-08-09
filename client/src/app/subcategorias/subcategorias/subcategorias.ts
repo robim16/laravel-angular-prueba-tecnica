@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SubcategoryService } from '../../subcategory-service';
 import { Subcategory } from '../../model/subcategory';
 import { RouterLink } from '@angular/router';
@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './subcategorias.html',
   styleUrl: './subcategorias.css'
 })
-export class Subcategorias {
+export class Subcategorias implements OnInit {
   subcategoryService: SubcategoryService = inject(SubcategoryService)
 
   subcategorias: Subcategory[] = [];

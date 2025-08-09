@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { CategoryService } from '../../category-service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-categorias',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './create-categorias.html',
   styleUrl: './create-categorias.css'
 })
@@ -36,7 +37,7 @@ export class CreateCategorias {
           console.error(err);
         }
       });
-      
+
     }
   }
 
