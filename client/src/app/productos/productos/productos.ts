@@ -19,7 +19,7 @@ export class Productos implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.subcategoryService.getSubcategories().subscribe({
+    this.subcategoryService.getProductos().subscribe({
       next: (data) => {
         this.productos = data;
         this.loading = false;
