@@ -1,6 +1,6 @@
 export interface Producto {
   id: number;
   nombre: string;
-  categoria_id: string;
+  subcategoria_id: string;
   estado: string;
 }

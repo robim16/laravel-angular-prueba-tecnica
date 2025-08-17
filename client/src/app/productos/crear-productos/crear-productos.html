@@ -22,15 +22,15 @@
         </div>
 
         <div class="mb-3">
-            <label for="categoria_id" class="form-label">Categoría del Producto</label>
-            <select class="form-control" id="categoria_id" formControlName="categoria_id"
-                [class.is-invalid]="productoForm.get('categoria_id')?.invalid && productoForm.get('categoria_id')?.touched">
-                <option value="" disabled selected>Seleccione un categoria</option>
+            <label for="subcategoria_id" class="form-label">Subcategoría del Producto</label>
+            <select class="form-control" id="subcategoria_id" formControlName="subcategoria_id"
+                [class.is-invalid]="productoForm.get('subcategoria_id')?.invalid && productoForm.get('subcategoria_id')?.touched">
+                <option value="" disabled selected>Seleccione un subcategoria</option>
                 @for(categoria of categorias; track categoria.id) {
                     <option [value]="categoria.id">{{ categoria.nombre }}</option>
                 }
             </select>
-            @if (productoForm.get('categoria_id')?.errors?.['required']) {
+            @if (productoForm.get('subcategoria_id')?.errors?.['required']) {
                 <div class="invalid-feedback">
                     La categoría es obligatoria.
                 </div>
@@ -43,8 +43,8 @@
             <select class="form-control" id="estado" formControlName="estado"
                 [class.is-invalid]="productoForm.get('estado')?.invalid && productoForm.get('estado')?.touched">
                 <option value="" disabled selected>Seleccione un estado</option>
-                <option value="activa">Activa</option>
-                <option value="inactiva">Inactiva</option>
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
             </select>
             @if (productoForm.get('estado')?.errors?.['required']) {
                 <div class="invalid-feedback">
