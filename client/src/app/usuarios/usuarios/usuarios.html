@@ -1,0 +1,26 @@
+<div class="container mt-4">
+    <h2>Listado de usuarios</h2>
+    <a class="btn btn-primary" routerLink="/usuarios/create">Crear usuario</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Contraseña</th>
+                <th>Rol</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(usuario of usuarios; track usuario.id) {
+                <tr>
+                    <td>{{ usuario.id }}</td>
+                    <td>{{ usuario.username }}</td>
+                    <td>{{ usuario.password }}</td>
+                    <td>{{ usuario.rol }}</td>
+                    <td>{{ usuario.estado }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
